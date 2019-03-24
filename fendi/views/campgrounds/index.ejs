@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+  <header id="ddd" class="jumbotron">
+    <h1 id="xdxd"></span> Welcome to FistAction!</h1>
+    
+    <hr>
+    <h3>
+    A machine learning model implemented for multiple different tasks related to human action. 
+FistAction uses a Convolutional Neural Network machine learning model to sift through an extremely large dataset to classify actions and implement itself into a variety of ways into bettering people’s lives as well as keeping them safer, all on a cohesive platform accessible via web application.
+</h3>
+   
+  </header>
+
+  <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+    <% if (noMatch !== null) {%>
+      <div class="col-md-12">
+        <h4><%= noMatch %></h4>
+      </div>
+    <% } %>
+    <% campgrounds.forEach(campground => {%>
+      <div class="col-md-3 col-sm-6">
+        <div class="thumbnail card">
+          <img class="campground__image" data-src="<%= campground.image.url %>" alt="<%= campground.name %>" />
+          <div class="caption">
+            <h4 id="guccigang" class="caption"><%= campground.name %></h4>
+          </div>
+          <p>
+            <a class="btn btn-outline-info btn-sm btn-b-mg" href="/campgrounds/<%= campground._id %>">
+              More Info
+            </a>
+          </p>
+        </div>
+      </div>
+    <% })%>
+  </div>
+<% include ../partials/footer %>
